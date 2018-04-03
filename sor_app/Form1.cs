@@ -17,9 +17,8 @@ namespace sor_app
    
     public partial class Form1 : Form
     {
-        List<string> fileNames = new List<string>();
+        List<PlotData> Plots = new List<PlotData>();
         GnuHandler gh = new GnuHandler();
-        List<Panel> Panels = new List<Panel>(); 
 
         public Form1()
         {
@@ -27,7 +26,7 @@ namespace sor_app
             GnuHandler.CheckListBox =  GnuSettingsInIt(); 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MakeDataClick_Click(object sender, EventArgs e)
         {
             try
             {
@@ -47,17 +46,17 @@ namespace sor_app
         {
             openFile.ShowDialog();
 
-            fileNames.Add(openFile.FileName);
+            Plots.Add(new PlotData(title.Text , openFile.FileName , Convert.ToInt32(col1.Text) , Convert.ToInt32(col2.Text) , with.Text , where.Text));
 
             loadedFiles.DataSource = null; 
-            loadedFiles.DataSource = fileNames; 
+            loadedFiles.DataSource = Plots; 
            
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void MakeGraph_Click(object sender, EventArgs e)
         {
-            gh.FileNames = fileNames;
+            gh.Plots = Plots;
 
             gh.graphPlot();
         }
@@ -77,5 +76,55 @@ namespace sor_app
         }
 
 
+
+        private void editGraph_Click(object sender, EventArgs e)
+        {
+            PlotData tmpPlot = (PlotData)loadedFiles.SelectedItems[0];
+
+            title.Text = tmpPlot.Title;
+
+            fileName.Text = tmpPlot.FileName;
+
+            col1.Text = Convert.ToString(tmpPlot.Col1); 
+                
+            col2.Text = Convert.ToString(tmpPlot.Col2);
+
+            with.Text = tmpPlot.With;
+                
+            where.Text = tmpPlot.Where;
+        }
+
+        private void saveGraph_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            Plots.Add(new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text));
+            }catch(Exception)
+            {
+                MessageBox.Show("you need col numbers"); 
+
+            }
+            loadedFiles.DataSource = null;
+            loadedFiles.DataSource = Plots; 
+
+        }
+
+        private void loadFileName_Click(object sender, EventArgs e)
+        {
+            openFile.FileName = ""; 
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                fileName.Text = openFile.FileName; 
+
+            }
+        }
+
+        private void overWrite_Click(object sender, EventArgs e)
+        {
+
+            Plots[loadedFiles.SelectedIndex] = new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text);
+            loadedFiles.DataSource = null;
+            loadedFiles.DataSource = Plots;
+        }
     }
 }

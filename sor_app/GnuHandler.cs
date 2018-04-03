@@ -10,7 +10,7 @@ namespace sor_app
 {
     class GnuHandler
     {
-        private List<string> fileNames = new List<string>();
+        private List<PlotData> plots = new List<PlotData>();
         public static CheckedListBox CheckListBox ; 
 
         public GnuHandler()
@@ -18,21 +18,21 @@ namespace sor_app
 
         }
 
-        public GnuHandler(List<string> fileNames)
+        public GnuHandler(List<PlotData> plots)
         {
-            this.fileNames = fileNames; 
+            this.plots = plots; 
 
         }
 
-        public List<string> FileNames
+        public List<PlotData> Plots
         {
             get
             {
-                return fileNames; 
+                return plots; 
             }
             set
             {
-                fileNames = value; 
+                plots = value; 
             }
         }
 
@@ -46,22 +46,20 @@ namespace sor_app
                 GnuPlot.Set(GnuSetting.GnuBoolSettingsList[x].Function);
             }
 
-                //GnuPlot.Set("multiplot");
                 GnuPlot.Set("xlabel \"qR\" font \", 20\"");
                 GnuPlot.Set("ylabel \"Perpendicularly polarized\" font \",20\"");
-                //GnuPlot.Set("logscale");
                 GnuPlot.Set("format y \"10^{%L}\"");
-                GnuPlot.Set("format x \"10^{% L}\"");
+                GnuPlot.Set("format x \"10^{%L}\"");
                 GnuPlot.Set("key bottom left");
                 GnuPlot.Set("key font \",20\"");
                 GnuPlot.Set("xrange[-10:100]");
                 GnuPlot.Set("yrange[-10:10000]");
-                //GnuPlot.Set("key invert");
                 GnuPlot.HoldOn();
-            
-            for (int i = 0; i < FileNames.Count; i++)
+
+            for (int i = 0; i < plots.Count; i++)
             {
-                GnuPlot.Plot(FileNames[i], "using 2:3 w l lw 2 title \"m = 1.3 p'=14.5\"");
+                GnuPlot.Plot(plots[i].FileName, "using 2:3 w l lw 2 title \"m = 1.3 p'=14.5\"");
+                GnuPlot.Plot(plots[i].FileName ,plots[i].Function());
             }
 
         }

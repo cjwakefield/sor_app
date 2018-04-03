@@ -45,13 +45,29 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadedFiles = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.makeGraph = new System.Windows.Forms.Button();
             this.SizeDistPanel = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MakeData = new System.Windows.Forms.TabPage();
             this.Plot = new System.Windows.Forms.TabPage();
-            this.GnuCheckBoxSettings = new System.Windows.Forms.CheckedListBox();
+            this.loadFileName = new System.Windows.Forms.Button();
+            this.saveGraph = new System.Windows.Forms.Button();
+            this.editGraph = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.where = new System.Windows.Forms.TextBox();
+            this.with = new System.Windows.Forms.TextBox();
+            this.col2 = new System.Windows.Forms.TextBox();
+            this.col1 = new System.Windows.Forms.TextBox();
+            this.fileName = new System.Windows.Forms.TextBox();
+            this.title = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.GnuCheckBoxSettings = new System.Windows.Forms.CheckedListBox();
+            this.overWrite = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SizeDistPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -67,7 +83,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Create Data";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.MakeDataClick_Click);
             // 
             // uxlambda
             // 
@@ -195,15 +211,15 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Loaded Files";
             // 
-            // button2
+            // makeGraph
             // 
-            this.button2.Location = new System.Drawing.Point(623, 239);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "MakeGraph";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.makeGraph.Location = new System.Drawing.Point(623, 239);
+            this.makeGraph.Name = "makeGraph";
+            this.makeGraph.Size = new System.Drawing.Size(75, 23);
+            this.makeGraph.TabIndex = 15;
+            this.makeGraph.Text = "MakeGraph";
+            this.makeGraph.UseVisualStyleBackColor = true;
+            this.makeGraph.Click += new System.EventHandler(this.MakeGraph_Click);
             // 
             // SizeDistPanel
             // 
@@ -246,10 +262,26 @@
             // 
             // Plot
             // 
+            this.Plot.Controls.Add(this.overWrite);
+            this.Plot.Controls.Add(this.loadFileName);
+            this.Plot.Controls.Add(this.saveGraph);
+            this.Plot.Controls.Add(this.editGraph);
+            this.Plot.Controls.Add(this.label13);
+            this.Plot.Controls.Add(this.label12);
+            this.Plot.Controls.Add(this.label11);
+            this.Plot.Controls.Add(this.label10);
+            this.Plot.Controls.Add(this.label8);
+            this.Plot.Controls.Add(this.label7);
+            this.Plot.Controls.Add(this.where);
+            this.Plot.Controls.Add(this.with);
+            this.Plot.Controls.Add(this.col2);
+            this.Plot.Controls.Add(this.col1);
+            this.Plot.Controls.Add(this.fileName);
+            this.Plot.Controls.Add(this.title);
             this.Plot.Controls.Add(this.label9);
             this.Plot.Controls.Add(this.GnuCheckBoxSettings);
             this.Plot.Controls.Add(this.label6);
-            this.Plot.Controls.Add(this.button2);
+            this.Plot.Controls.Add(this.makeGraph);
             this.Plot.Controls.Add(this.loadedFiles);
             this.Plot.Location = new System.Drawing.Point(4, 22);
             this.Plot.Name = "Plot";
@@ -258,6 +290,141 @@
             this.Plot.TabIndex = 1;
             this.Plot.Text = "Plot";
             this.Plot.UseVisualStyleBackColor = true;
+            // 
+            // loadFileName
+            // 
+            this.loadFileName.Location = new System.Drawing.Point(358, 56);
+            this.loadFileName.Name = "loadFileName";
+            this.loadFileName.Size = new System.Drawing.Size(97, 20);
+            this.loadFileName.TabIndex = 36;
+            this.loadFileName.Text = "LoadFilePath";
+            this.loadFileName.UseVisualStyleBackColor = true;
+            this.loadFileName.Click += new System.EventHandler(this.loadFileName_Click);
+            // 
+            // saveGraph
+            // 
+            this.saveGraph.Location = new System.Drawing.Point(785, 239);
+            this.saveGraph.Name = "saveGraph";
+            this.saveGraph.Size = new System.Drawing.Size(75, 23);
+            this.saveGraph.TabIndex = 35;
+            this.saveGraph.Text = "SaveGraph";
+            this.saveGraph.UseVisualStyleBackColor = true;
+            this.saveGraph.Click += new System.EventHandler(this.saveGraph_Click);
+            // 
+            // editGraph
+            // 
+            this.editGraph.Location = new System.Drawing.Point(704, 239);
+            this.editGraph.Name = "editGraph";
+            this.editGraph.Size = new System.Drawing.Size(75, 23);
+            this.editGraph.TabIndex = 34;
+            this.editGraph.Text = "EditGraph";
+            this.editGraph.UseVisualStyleBackColor = true;
+            this.editGraph.Click += new System.EventHandler(this.editGraph_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(461, 164);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 13);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Where";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(461, 138);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "With";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(461, 112);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Col 2 ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(461, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Col 1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(461, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "FilePath";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(461, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Title";
+            // 
+            // where
+            // 
+            this.where.Location = new System.Drawing.Point(517, 164);
+            this.where.Name = "where";
+            this.where.Size = new System.Drawing.Size(100, 20);
+            this.where.TabIndex = 27;
+            // 
+            // with
+            // 
+            this.with.Location = new System.Drawing.Point(517, 138);
+            this.with.Name = "with";
+            this.with.Size = new System.Drawing.Size(100, 20);
+            this.with.TabIndex = 26;
+            // 
+            // col2
+            // 
+            this.col2.Location = new System.Drawing.Point(517, 112);
+            this.col2.Name = "col2";
+            this.col2.Size = new System.Drawing.Size(100, 20);
+            this.col2.TabIndex = 25;
+            // 
+            // col1
+            // 
+            this.col1.Location = new System.Drawing.Point(517, 86);
+            this.col1.Name = "col1";
+            this.col1.Size = new System.Drawing.Size(100, 20);
+            this.col1.TabIndex = 24;
+            // 
+            // fileName
+            // 
+            this.fileName.Location = new System.Drawing.Point(517, 60);
+            this.fileName.Name = "fileName";
+            this.fileName.Size = new System.Drawing.Size(100, 20);
+            this.fileName.TabIndex = 23;
+            // 
+            // title
+            // 
+            this.title.Location = new System.Drawing.Point(517, 34);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(100, 20);
+            this.title.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(245, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Graph Settings";
             // 
             // GnuCheckBoxSettings
             // 
@@ -268,14 +435,15 @@
             this.GnuCheckBoxSettings.Size = new System.Drawing.Size(120, 199);
             this.GnuCheckBoxSettings.TabIndex = 16;
             // 
-            // label9
+            // overWrite
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(251, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "GraphSettinsg ";
+            this.overWrite.Location = new System.Drawing.Point(867, 239);
+            this.overWrite.Name = "overWrite";
+            this.overWrite.Size = new System.Drawing.Size(75, 23);
+            this.overWrite.TabIndex = 37;
+            this.overWrite.Text = "OverWrite";
+            this.overWrite.UseVisualStyleBackColor = true;
+            this.overWrite.Click += new System.EventHandler(this.overWrite_Click);
             // 
             // Form1
             // 
@@ -319,13 +487,29 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ListBox loadedFiles;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button makeGraph;
         private System.Windows.Forms.Panel SizeDistPanel;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage MakeData;
         private System.Windows.Forms.TabPage Plot;
         private System.Windows.Forms.CheckedListBox GnuCheckBoxSettings;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox with;
+        private System.Windows.Forms.TextBox col2;
+        private System.Windows.Forms.TextBox col1;
+        private System.Windows.Forms.TextBox fileName;
+        private System.Windows.Forms.TextBox title;
+        private System.Windows.Forms.TextBox where;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button editGraph;
+        private System.Windows.Forms.Button saveGraph;
+        private System.Windows.Forms.Button loadFileName;
+        private System.Windows.Forms.Button overWrite;
     }
 }
 

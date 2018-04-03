@@ -38,7 +38,14 @@ namespace sor_app
         }
         public string Function()
         {
-            return fileName + " using [" +col1 +":" + col2 + "] w" +with + " wh " + where + " title \"" + title + "\"";
+            if (with == "" && where == "")
+                return " using " + col1 + ":" + col2 + "" + " title \"" + title + "\"";
+            else if (with == "")
+                return " using " + col1 + ":" + col2 + "" + " wh " + where + " title \"" + title + "\"";
+            else if (where == "")
+                return " using " +col1 +":" + col2 + " w " +with + " title \"" + title + "\"";
+            else
+                return " using " + col1 + ":" + col2 + "" + " w " + with + " wh " + where + " title \"" + title + "\"";
         }
 
 
