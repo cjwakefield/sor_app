@@ -57,7 +57,7 @@ namespace sor_app
         private void MakeGraph_Click(object sender, EventArgs e)
         {
             gh.Plots = Plots;
-
+            LoadUsersSettings(); 
             gh.graphPlot();
         }
         private CheckedListBox GnuSettingsInIt()
@@ -126,5 +126,26 @@ namespace sor_app
             loadedFiles.DataSource = null;
             loadedFiles.DataSource = Plots;
         }
+
+        private void removeGraph_Click(object sender, EventArgs e)
+        {
+            Plots.RemoveAt(loadedFiles.SelectedIndex);
+            loadedFiles.DataSource = null;
+            loadedFiles.DataSource = Plots;
+        }
+
+        private void LoadUsersSettings()
+        {
+            GnuSetting.GnuUserSettingsList.Clear(); 
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("xlabel", "xlabel " +"\"" + xLable.Text+ "\""));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("ylabel", "ylabel " + "\""+ yLable.Text+ "\""));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("formatx", "format x " + FormatX.Text));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("formaty", "format y " + FormatY.Text));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("key", "key " + Key.Text));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("xrange", "xrange[" + XRangeStart.Text + ":"+ XRangeStop.Text + "]"));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("xrange", "yrange[" + YRangeStart.Text + ":" + YRangeStop.Text + "]"));
+
+        }
+
     }
 }

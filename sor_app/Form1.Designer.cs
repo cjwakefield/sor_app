@@ -50,6 +50,24 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MakeData = new System.Windows.Forms.TabPage();
             this.Plot = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.Key = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.FormatY = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.FormatX = new System.Windows.Forms.TextBox();
+            this.YRangeStop = new System.Windows.Forms.TextBox();
+            this.XRangeStop = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.YRangeStart = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.XRangeStart = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.yLable = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.xLable = new System.Windows.Forms.TextBox();
+            this.removeGraph = new System.Windows.Forms.Button();
+            this.overWrite = new System.Windows.Forms.Button();
             this.loadFileName = new System.Windows.Forms.Button();
             this.saveGraph = new System.Windows.Forms.Button();
             this.editGraph = new System.Windows.Forms.Button();
@@ -67,7 +85,6 @@
             this.title = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.GnuCheckBoxSettings = new System.Windows.Forms.CheckedListBox();
-            this.overWrite = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SizeDistPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -205,7 +222,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(745, 3);
+            this.label6.Location = new System.Drawing.Point(355, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 14;
@@ -213,7 +230,7 @@
             // 
             // makeGraph
             // 
-            this.makeGraph.Location = new System.Drawing.Point(623, 239);
+            this.makeGraph.Location = new System.Drawing.Point(464, 239);
             this.makeGraph.Name = "makeGraph";
             this.makeGraph.Size = new System.Drawing.Size(75, 23);
             this.makeGraph.TabIndex = 15;
@@ -262,6 +279,23 @@
             // 
             // Plot
             // 
+            this.Plot.Controls.Add(this.label20);
+            this.Plot.Controls.Add(this.Key);
+            this.Plot.Controls.Add(this.label18);
+            this.Plot.Controls.Add(this.FormatY);
+            this.Plot.Controls.Add(this.label19);
+            this.Plot.Controls.Add(this.FormatX);
+            this.Plot.Controls.Add(this.YRangeStop);
+            this.Plot.Controls.Add(this.XRangeStop);
+            this.Plot.Controls.Add(this.label17);
+            this.Plot.Controls.Add(this.YRangeStart);
+            this.Plot.Controls.Add(this.label16);
+            this.Plot.Controls.Add(this.XRangeStart);
+            this.Plot.Controls.Add(this.label15);
+            this.Plot.Controls.Add(this.yLable);
+            this.Plot.Controls.Add(this.label14);
+            this.Plot.Controls.Add(this.xLable);
+            this.Plot.Controls.Add(this.removeGraph);
             this.Plot.Controls.Add(this.overWrite);
             this.Plot.Controls.Add(this.loadFileName);
             this.Plot.Controls.Add(this.saveGraph);
@@ -291,6 +325,152 @@
             this.Plot.Text = "Plot";
             this.Plot.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(134, 181);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(25, 13);
+            this.label20.TabIndex = 54;
+            this.label20.Text = "Key";
+            // 
+            // Key
+            // 
+            this.Key.Location = new System.Drawing.Point(196, 181);
+            this.Key.Name = "Key";
+            this.Key.Size = new System.Drawing.Size(100, 20);
+            this.Key.TabIndex = 53;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(134, 155);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(49, 13);
+            this.label18.TabIndex = 52;
+            this.label18.Text = "Format Y";
+            // 
+            // FormatY
+            // 
+            this.FormatY.Location = new System.Drawing.Point(196, 155);
+            this.FormatY.Name = "FormatY";
+            this.FormatY.Size = new System.Drawing.Size(100, 20);
+            this.FormatY.TabIndex = 51;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(134, 129);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(49, 13);
+            this.label19.TabIndex = 50;
+            this.label19.Text = "Format X";
+            // 
+            // FormatX
+            // 
+            this.FormatX.Location = new System.Drawing.Point(196, 129);
+            this.FormatX.Name = "FormatX";
+            this.FormatX.Size = new System.Drawing.Size(100, 20);
+            this.FormatX.TabIndex = 49;
+            // 
+            // YRangeStop
+            // 
+            this.YRangeStop.Location = new System.Drawing.Point(247, 103);
+            this.YRangeStop.Name = "YRangeStop";
+            this.YRangeStop.Size = new System.Drawing.Size(49, 20);
+            this.YRangeStop.TabIndex = 48;
+            // 
+            // XRangeStop
+            // 
+            this.XRangeStop.Location = new System.Drawing.Point(247, 77);
+            this.XRangeStop.Name = "XRangeStop";
+            this.XRangeStop.Size = new System.Drawing.Size(49, 20);
+            this.XRangeStop.TabIndex = 47;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(134, 103);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 13);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Y  Range";
+            // 
+            // YRangeStart
+            // 
+            this.YRangeStart.Location = new System.Drawing.Point(196, 103);
+            this.YRangeStart.Name = "YRangeStart";
+            this.YRangeStart.Size = new System.Drawing.Size(45, 20);
+            this.YRangeStart.TabIndex = 45;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(134, 77);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 13);
+            this.label16.TabIndex = 44;
+            this.label16.Text = "X Range";
+            // 
+            // XRangeStart
+            // 
+            this.XRangeStart.Location = new System.Drawing.Point(196, 77);
+            this.XRangeStart.Name = "XRangeStart";
+            this.XRangeStart.Size = new System.Drawing.Size(45, 20);
+            this.XRangeStart.TabIndex = 43;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(134, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "Y Lable";
+            // 
+            // yLable
+            // 
+            this.yLable.Location = new System.Drawing.Point(196, 51);
+            this.yLable.Name = "yLable";
+            this.yLable.Size = new System.Drawing.Size(100, 20);
+            this.yLable.TabIndex = 41;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(134, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "X Lable";
+            // 
+            // xLable
+            // 
+            this.xLable.Location = new System.Drawing.Point(196, 25);
+            this.xLable.Name = "xLable";
+            this.xLable.Size = new System.Drawing.Size(100, 20);
+            this.xLable.TabIndex = 39;
+            // 
+            // removeGraph
+            // 
+            this.removeGraph.Location = new System.Drawing.Point(789, 238);
+            this.removeGraph.Name = "removeGraph";
+            this.removeGraph.Size = new System.Drawing.Size(88, 23);
+            this.removeGraph.TabIndex = 38;
+            this.removeGraph.Text = "RemoveGraph";
+            this.removeGraph.UseVisualStyleBackColor = true;
+            this.removeGraph.Click += new System.EventHandler(this.removeGraph_Click);
+            // 
+            // overWrite
+            // 
+            this.overWrite.Location = new System.Drawing.Point(707, 239);
+            this.overWrite.Name = "overWrite";
+            this.overWrite.Size = new System.Drawing.Size(75, 23);
+            this.overWrite.TabIndex = 37;
+            this.overWrite.Text = "OverWrite";
+            this.overWrite.UseVisualStyleBackColor = true;
+            this.overWrite.Click += new System.EventHandler(this.overWrite_Click);
+            // 
             // loadFileName
             // 
             this.loadFileName.Location = new System.Drawing.Point(358, 56);
@@ -303,7 +483,7 @@
             // 
             // saveGraph
             // 
-            this.saveGraph.Location = new System.Drawing.Point(785, 239);
+            this.saveGraph.Location = new System.Drawing.Point(626, 239);
             this.saveGraph.Name = "saveGraph";
             this.saveGraph.Size = new System.Drawing.Size(75, 23);
             this.saveGraph.TabIndex = 35;
@@ -313,7 +493,7 @@
             // 
             // editGraph
             // 
-            this.editGraph.Location = new System.Drawing.Point(704, 239);
+            this.editGraph.Location = new System.Drawing.Point(545, 239);
             this.editGraph.Name = "editGraph";
             this.editGraph.Size = new System.Drawing.Size(75, 23);
             this.editGraph.TabIndex = 34;
@@ -369,11 +549,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(461, 34);
+            this.label7.Location = new System.Drawing.Point(452, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Title";
+            this.label7.Text = "Graph Title";
             // 
             // where
             // 
@@ -420,7 +600,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 3);
+            this.label9.Location = new System.Drawing.Point(8, 3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 19;
@@ -434,16 +614,6 @@
             this.GnuCheckBoxSettings.Name = "GnuCheckBoxSettings";
             this.GnuCheckBoxSettings.Size = new System.Drawing.Size(120, 199);
             this.GnuCheckBoxSettings.TabIndex = 16;
-            // 
-            // overWrite
-            // 
-            this.overWrite.Location = new System.Drawing.Point(867, 239);
-            this.overWrite.Name = "overWrite";
-            this.overWrite.Size = new System.Drawing.Size(75, 23);
-            this.overWrite.TabIndex = 37;
-            this.overWrite.Text = "OverWrite";
-            this.overWrite.UseVisualStyleBackColor = true;
-            this.overWrite.Click += new System.EventHandler(this.overWrite_Click);
             // 
             // Form1
             // 
@@ -510,6 +680,23 @@
         private System.Windows.Forms.Button saveGraph;
         private System.Windows.Forms.Button loadFileName;
         private System.Windows.Forms.Button overWrite;
+        private System.Windows.Forms.Button removeGraph;
+        private System.Windows.Forms.TextBox YRangeStop;
+        private System.Windows.Forms.TextBox XRangeStop;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox YRangeStart;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox XRangeStart;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox yLable;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox xLable;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox Key;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox FormatY;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox FormatX;
     }
 }
 
