@@ -39,8 +39,7 @@ namespace sor_app
         public void graphPlot()
         { 
             GnuPlot.Reset();
-
-            for(int x = 0; x < GnuSetting.GnuBoolSettingsList.Count; x++)
+            for (int x = 0; x < GnuSetting.GnuBoolSettingsList.Count; x++)
             {
                 if(CheckListBox.GetItemChecked(x))
                 GnuPlot.Set(GnuSetting.GnuBoolSettingsList[x].Function);
@@ -51,23 +50,25 @@ namespace sor_app
                     GnuPlot.Set(GnuSetting.GnuUserSettingsList[x].Function);
             }
 
-                /*GnuPlot.Set("xlabel \"qR\" font \", 20\"");
-                GnuPlot.Set("ylabel \"Perpendicularly polarized\" font \",20\"");
-                GnuPlot.Set("format y \"10^{%L}\"");
-                GnuPlot.Set("format x \"10^{%L}\"");
-                GnuPlot.Set("key bottom left");
-                GnuPlot.Set("key font \",20\"");
-                GnuPlot.Set("xrange[-10:100]");
-                GnuPlot.Set("yrange[-10:10000]");*/
-                //dash types 
-                // format toa drop down 
-                // color 
-                //
+            /*GnuPlot.Set("xlabel \"qR\" font \", 20\"");
+            GnuPlot.Set("ylabel \"Perpendicularly polarized\" font \",20\"");
+            GnuPlot.Set("format y \"10^{%L}\"");
+            GnuPlot.Set("format x \"10^{%L}\"");
+            GnuPlot.Set("key bottom left");
+            GnuPlot.Set("key font \",20\"");
+            GnuPlot.Set("xrange[-10:100]");
+            GnuPlot.Set("yrange[-10:10000]");*/
+            // dash types 
+            // format toa drop down 
+            // color 
+            //
                 GnuPlot.HoldOn();
 
             for (int i = 0; i < plots.Count; i++)
             {
+                //" using 2:3  rgb \"#16760832\" title \"test\" "
                 //GnuPlot.Plot(plots[i].FileName, "using 2:3 w l lw 2 title \"m = 1.3 p'=14.5\"");
+                //GnuPlot.Plot(plots[i].FileName, " using 2:3 lt rgb \"#00FF00\" title \"test\" ");
                 GnuPlot.Plot(plots[i].FileName ,plots[i].Function());
             }
 

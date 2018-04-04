@@ -42,18 +42,6 @@ namespace sor_app
 
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openFile.ShowDialog();
-
-            Plots.Add(new PlotData(title.Text , openFile.FileName , Convert.ToInt32(col1.Text) , Convert.ToInt32(col2.Text) , with.Text , where.Text));
-
-            loadedFiles.DataSource = null; 
-            loadedFiles.DataSource = Plots; 
-           
-
-        }
-
         private void MakeGraph_Click(object sender, EventArgs e)
         {
             gh.Plots = Plots;
@@ -62,9 +50,10 @@ namespace sor_app
         }
         private CheckedListBox GnuSettingsInIt()
         {
-            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("multiplot" , "multiplot"));
             GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("logscale", "logscale"));
             GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("key invert", "key invert"));
+            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("parametric", "parametric"));
+            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("polar", "polar"));
 
 
             for (int x = 0; x < GnuSetting.GnuBoolSettingsList.Count; x++)
@@ -98,7 +87,8 @@ namespace sor_app
         {
             try
             {
-            Plots.Add(new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text));
+                string rgb = " rgb \"#" + (colorDialog1.Color.ToArgb() & 0x00FFFFFF).ToString("X6") + "\""; 
+                Plots.Add(new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text , rgb , lineType.Text));
             }catch(Exception)
             {
                 MessageBox.Show("you need col numbers"); 
@@ -121,8 +111,9 @@ namespace sor_app
 
         private void overWrite_Click(object sender, EventArgs e)
         {
+            string rgb = "rgb \"#" + (colorDialog1.Color.ToArgb() & 0x00FFFFFF).ToString("X6") + "\"";
 
-            Plots[loadedFiles.SelectedIndex] = new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text);
+            Plots[loadedFiles.SelectedIndex] = new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text, rgb , lineType.Text);
             loadedFiles.DataSource = null;
             loadedFiles.DataSource = Plots;
         }
@@ -139,13 +130,23 @@ namespace sor_app
             GnuSetting.GnuUserSettingsList.Clear(); 
             GnuSetting.GnuUserSettingsList.Add(new GnuSetting("xlabel", "xlabel " +"\"" + xLable.Text+ "\""));
             GnuSetting.GnuUserSettingsList.Add(new GnuSetting("ylabel", "ylabel " + "\""+ yLable.Text+ "\""));
-            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("formatx", "format x " + FormatX.Text));
-            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("formaty", "format y " + FormatY.Text));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("formatx", "format x " + "\""+FormatX.Text+ "\""));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("formaty", "format y " + "\"" +FormatY.Text + "\""));
             GnuSetting.GnuUserSettingsList.Add(new GnuSetting("key", "key " + Key.Text));
             GnuSetting.GnuUserSettingsList.Add(new GnuSetting("xrange", "xrange[" + XRangeStart.Text + ":"+ XRangeStop.Text + "]"));
-            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("xrange", "yrange[" + YRangeStart.Text + ":" + YRangeStop.Text + "]"));
+            GnuSetting.GnuUserSettingsList.Add(new GnuSetting("yrange", "yrange[" + YRangeStart.Text + ":" + YRangeStop.Text + "]"));
 
         }
+
+        private void color_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                color.BackColor = colorDialog1.Color; 
+            }
+
+        }
+
 
     }
 }
