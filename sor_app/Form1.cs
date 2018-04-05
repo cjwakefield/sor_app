@@ -66,7 +66,7 @@ namespace sor_app
 
 
 
-        private void editGraph_Click(object sender, EventArgs e)
+        /*private void editGraph_Click(object sender, EventArgs e)
         {
             PlotData tmpPlot = (PlotData)loadedFiles.SelectedItems[0];
 
@@ -81,13 +81,22 @@ namespace sor_app
             with.Text = tmpPlot.With;
                 
             where.Text = tmpPlot.Where;
-        }
+             
+            colorDialog1.Color = (Color)System.Drawing.ColorTranslator.FromHtml(tmpPlot.Color);
+
+            color.BackColor = colorDialog1.Color;
+
+            lineType.Text = tmpPlot.LineType; 
+
+
+
+        }*/
 
         private void saveGraph_Click(object sender, EventArgs e)
         {
             try
             {
-                string rgb = " rgb \"#" + (colorDialog1.Color.ToArgb() & 0x00FFFFFF).ToString("X6") + "\""; 
+                string rgb =  (colorDialog1.Color.ToArgb() & 0x00FFFFFF).ToString("X6") + "\""; 
                 Plots.Add(new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text , rgb , lineType.Text));
             }catch(Exception)
             {
@@ -111,18 +120,29 @@ namespace sor_app
 
         private void overWrite_Click(object sender, EventArgs e)
         {
-            string rgb = "rgb \"#" + (colorDialog1.Color.ToArgb() & 0x00FFFFFF).ToString("X6") + "\"";
+            string rgb =  (colorDialog1.Color.ToArgb() & 0x00FFFFFF).ToString("X6") + "\"";
+            try
+            {
+                Plots[loadedFiles.SelectedIndex] = new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text, rgb, lineType.Text);
+                loadedFiles.DataSource = null;
+                loadedFiles.DataSource = Plots;
+            }catch(Exception)
+            {
 
-            Plots[loadedFiles.SelectedIndex] = new PlotData(title.Text, openFile.FileName, Convert.ToInt32(col1.Text), Convert.ToInt32(col2.Text), with.Text, where.Text, rgb , lineType.Text);
-            loadedFiles.DataSource = null;
-            loadedFiles.DataSource = Plots;
+            }
         }
 
         private void removeGraph_Click(object sender, EventArgs e)
         {
-            Plots.RemoveAt(loadedFiles.SelectedIndex);
-            loadedFiles.DataSource = null;
-            loadedFiles.DataSource = Plots;
+            try
+            {
+                Plots.RemoveAt(loadedFiles.SelectedIndex);
+                loadedFiles.DataSource = null;
+                loadedFiles.DataSource = Plots;
+            }catch(Exception)
+            {
+
+            }
         }
 
         private void LoadUsersSettings()
@@ -147,6 +167,13 @@ namespace sor_app
 
         }
 
-
+        private void loadedFiles_DoubleClick(object sender, EventArgs e)
+        {
+            if (loadedFiles.SelectedItem != null)
+            {
+                PlotData pdtmp = (PlotData)loadedFiles.SelectedItem;
+                MessageBox.Show(pdtmp.Function() + "\n" + pdtmp.FileName);
+            }
+        }
     }
 }

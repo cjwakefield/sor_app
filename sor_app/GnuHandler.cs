@@ -39,6 +39,7 @@ namespace sor_app
         public void graphPlot()
         { 
             GnuPlot.Reset();
+
             for (int x = 0; x < GnuSetting.GnuBoolSettingsList.Count; x++)
             {
                 if(CheckListBox.GetItemChecked(x))
@@ -49,7 +50,7 @@ namespace sor_app
             {
                     GnuPlot.Set(GnuSetting.GnuUserSettingsList[x].Function);
             }
-
+            GnuPlot.Set("term wxt enhanced dashed \"arial,16\""); 
             /*GnuPlot.Set("xlabel \"qR\" font \", 20\"");
             GnuPlot.Set("ylabel \"Perpendicularly polarized\" font \",20\"");
             GnuPlot.Set("format y \"10^{%L}\"");
@@ -62,8 +63,7 @@ namespace sor_app
             // format toa drop down 
             // color 
             //
-                GnuPlot.HoldOn();
-
+            GnuPlot.HoldOn();
             for (int i = 0; i < plots.Count; i++)
             {
                 //" using 2:3  rgb \"#16760832\" title \"test\" "

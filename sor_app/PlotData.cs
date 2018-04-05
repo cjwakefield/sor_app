@@ -45,14 +45,20 @@ namespace sor_app
         }
         public string Function()
         {
+            string tmpLT = "";
+            if("" != lineType)
+            {
+                tmpLT = " lt " + lineType; 
+            }
+
             if (with == "" && where == "")
-                return " using " + col1 + ":" + col2 + " lc " + color +" lt "+ lineType + " title \"" + title + "\" " ;
+                return " using " + col1 + ":" + col2 + " lc " +" rgb \"#"+ color + tmpLT + " title \"" + title + "\" " ;
             else if (with == "")
-                return " using " + col1 + ":" + col2 + " lc " + color + " lt " + lineType + " wh " + where + " title \"" + title + "\" " ;
+                return " using " + col1 + ":" + col2 + " lc " + " rgb \"#" + color + tmpLT + " wh " + where + " title \"" + title + "\" " ;
             else if (where == "")
-                return " using " +col1 +":" + col2 + " lc " + color + " lt " + lineType + " w " +with + " title \"" + title + "\" " ;
+                return " using " +col1 +":" + col2 + " lc " + " rgb \"#" + color + tmpLT + " w " +with + " title \"" + title + "\" " ;
             else
-                return " using " + col1 + ":" + col2 + " lc " + color + " lt " + lineType + " w " + with + " wh " + where + " title \"" + title + "\" " ;
+                return " using " + col1 + ":" + col2 + " lc " + " rgb \"#" + color + tmpLT + " w " + with + " wh " + where + " title \"" + title + "\" " ;
         }
 
 

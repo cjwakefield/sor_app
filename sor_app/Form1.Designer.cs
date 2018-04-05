@@ -50,6 +50,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MakeData = new System.Windows.Forms.TabPage();
             this.Plot = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
             this.lineType = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.where = new System.Windows.Forms.ComboBox();
@@ -76,7 +77,6 @@
             this.overWrite = new System.Windows.Forms.Button();
             this.loadFileName = new System.Windows.Forms.Button();
             this.saveGraph = new System.Windows.Forms.Button();
-            this.editGraph = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -90,8 +90,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.GnuCheckBoxSettings = new System.Windows.Forms.CheckedListBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
-            this.label23 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SizeDistPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -224,6 +222,7 @@
             this.loadedFiles.Name = "loadedFiles";
             this.loadedFiles.Size = new System.Drawing.Size(320, 225);
             this.loadedFiles.TabIndex = 13;
+            this.loadedFiles.DoubleClick += new System.EventHandler(this.loadedFiles_DoubleClick);
             // 
             // label6
             // 
@@ -312,7 +311,6 @@
             this.Plot.Controls.Add(this.overWrite);
             this.Plot.Controls.Add(this.loadFileName);
             this.Plot.Controls.Add(this.saveGraph);
-            this.Plot.Controls.Add(this.editGraph);
             this.Plot.Controls.Add(this.label13);
             this.Plot.Controls.Add(this.label12);
             this.Plot.Controls.Add(this.label11);
@@ -335,6 +333,15 @@
             this.Plot.TabIndex = 1;
             this.Plot.Text = "Plot";
             this.Plot.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(441, 233);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(54, 13);
+            this.label23.TabIndex = 64;
+            this.label23.Text = "Line Type";
             // 
             // lineType
             // 
@@ -373,7 +380,7 @@
             // 
             this.with.FormattingEnabled = true;
             this.with.Items.AddRange(new object[] {
-            "",
+            "dashed",
             "line"});
             this.with.Location = new System.Drawing.Point(496, 149);
             this.with.Name = "with";
@@ -397,7 +404,9 @@
             // 
             this.FormatY.FormattingEnabled = true;
             this.FormatY.Items.AddRange(new object[] {
-            "10^{%L}"});
+            "%.0f",
+            "10^{%L}",
+            "%t"});
             this.FormatY.Location = new System.Drawing.Point(196, 164);
             this.FormatY.Name = "FormatY";
             this.FormatY.Size = new System.Drawing.Size(121, 21);
@@ -407,7 +416,9 @@
             // 
             this.FormatX.FormattingEnabled = true;
             this.FormatX.Items.AddRange(new object[] {
-            "10^{%L}"});
+            "%.0f",
+            "10^{%L}",
+            "%t"});
             this.FormatX.Location = new System.Drawing.Point(196, 133);
             this.FormatX.Name = "FormatX";
             this.FormatX.Size = new System.Drawing.Size(121, 21);
@@ -539,7 +550,7 @@
             // 
             // removeGraph
             // 
-            this.removeGraph.Location = new System.Drawing.Point(849, 259);
+            this.removeGraph.Location = new System.Drawing.Point(767, 260);
             this.removeGraph.Name = "removeGraph";
             this.removeGraph.Size = new System.Drawing.Size(88, 23);
             this.removeGraph.TabIndex = 38;
@@ -549,7 +560,7 @@
             // 
             // overWrite
             // 
-            this.overWrite.Location = new System.Drawing.Point(767, 260);
+            this.overWrite.Location = new System.Drawing.Point(686, 260);
             this.overWrite.Name = "overWrite";
             this.overWrite.Size = new System.Drawing.Size(75, 23);
             this.overWrite.TabIndex = 37;
@@ -569,23 +580,13 @@
             // 
             // saveGraph
             // 
-            this.saveGraph.Location = new System.Drawing.Point(686, 260);
+            this.saveGraph.Location = new System.Drawing.Point(605, 259);
             this.saveGraph.Name = "saveGraph";
             this.saveGraph.Size = new System.Drawing.Size(75, 23);
             this.saveGraph.TabIndex = 35;
             this.saveGraph.Text = "SaveGraph";
             this.saveGraph.UseVisualStyleBackColor = true;
             this.saveGraph.Click += new System.EventHandler(this.saveGraph_Click);
-            // 
-            // editGraph
-            // 
-            this.editGraph.Location = new System.Drawing.Point(605, 260);
-            this.editGraph.Name = "editGraph";
-            this.editGraph.Size = new System.Drawing.Size(75, 23);
-            this.editGraph.TabIndex = 34;
-            this.editGraph.Text = "EditGraph";
-            this.editGraph.UseVisualStyleBackColor = true;
-            this.editGraph.Click += new System.EventHandler(this.editGraph_Click);
             // 
             // label13
             // 
@@ -687,15 +688,6 @@
             this.GnuCheckBoxSettings.Size = new System.Drawing.Size(120, 199);
             this.GnuCheckBoxSettings.TabIndex = 16;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(441, 233);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 13);
-            this.label23.TabIndex = 64;
-            this.label23.Text = "Line Type";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,7 +747,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button editGraph;
         private System.Windows.Forms.Button saveGraph;
         private System.Windows.Forms.Button loadFileName;
         private System.Windows.Forms.Button overWrite;
@@ -776,7 +767,6 @@
         private System.Windows.Forms.Button color;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.ColorDialog colorDialog2;
         private System.Windows.Forms.ComboBox FormatY;
         private System.Windows.Forms.ComboBox FormatX;
         private System.Windows.Forms.ComboBox Key;
