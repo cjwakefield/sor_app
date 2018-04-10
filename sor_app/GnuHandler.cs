@@ -50,8 +50,7 @@ namespace sor_app
             {
                     GnuPlot.Set(GnuSetting.GnuUserSettingsList[x].Function);
             }
-            GnuPlot.Set("term wxt enhanced dashed \"arial,16\""); 
-            /*GnuPlot.Set("xlabel \"qR\" font \", 20\"");
+            /*
             GnuPlot.Set("ylabel \"Perpendicularly polarized\" font \",20\"");
             GnuPlot.Set("format y \"10^{%L}\"");
             GnuPlot.Set("format x \"10^{%L}\"");
@@ -67,8 +66,8 @@ namespace sor_app
             for (int i = 0; i < plots.Count; i++)
             {
                 //" using 2:3  rgb \"#16760832\" title \"test\" "
-                //GnuPlot.Plot(plots[i].FileName, "using 2:3 w l lw 2 title \"m = 1.3 p'=14.5\"");
-                //GnuPlot.Plot(plots[i].FileName, " using 2:3 lt rgb \"#00FF00\" title \"test\" ");
+                //GnuPlot.Plot(plots[i].FileName, "using 2:3 w l lw 2 ls 1 title \"m = 1.3 p'=14.5\" ");
+                //GnuPlot.Plot(plots[i].FileName, " using 2:3 style line title \"test\" ");
                 GnuPlot.Plot(plots[i].FileName ,plots[i].Function());
             }
 

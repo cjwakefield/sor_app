@@ -40,9 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadedFiles = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.makeGraph = new System.Windows.Forms.Button();
@@ -90,7 +87,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.GnuCheckBoxSettings = new System.Windows.Forms.CheckedListBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.menuStrip1.SuspendLayout();
             this.SizeDistPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.MakeData.SuspendLayout();
@@ -191,30 +187,6 @@
             // 
             this.openFile.FileName = "openFileDialog1";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(962, 24);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
             // loadedFiles
             // 
             this.loadedFiles.FormattingEnabled = true;
@@ -263,12 +235,12 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.MakeData);
             this.tabControl1.Controls.Add(this.Plot);
-            this.tabControl1.Location = new System.Drawing.Point(0, 25);
+            this.tabControl1.Controls.Add(this.MakeData);
+            this.tabControl1.Location = new System.Drawing.Point(0, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(962, 315);
+            this.tabControl1.Size = new System.Drawing.Size(962, 341);
             this.tabControl1.TabIndex = 17;
             // 
             // MakeData
@@ -277,7 +249,7 @@
             this.MakeData.Location = new System.Drawing.Point(4, 22);
             this.MakeData.Name = "MakeData";
             this.MakeData.Padding = new System.Windows.Forms.Padding(3);
-            this.MakeData.Size = new System.Drawing.Size(954, 289);
+            this.MakeData.Size = new System.Drawing.Size(954, 315);
             this.MakeData.TabIndex = 0;
             this.MakeData.Text = "Make Data";
             this.MakeData.UseVisualStyleBackColor = true;
@@ -329,7 +301,7 @@
             this.Plot.Location = new System.Drawing.Point(4, 22);
             this.Plot.Name = "Plot";
             this.Plot.Padding = new System.Windows.Forms.Padding(3);
-            this.Plot.Size = new System.Drawing.Size(954, 289);
+            this.Plot.Size = new System.Drawing.Size(954, 315);
             this.Plot.TabIndex = 1;
             this.Plot.Text = "Plot";
             this.Plot.UseVisualStyleBackColor = true;
@@ -380,7 +352,7 @@
             // 
             this.with.FormattingEnabled = true;
             this.with.Items.AddRange(new object[] {
-            "dashed",
+            "",
             "line"});
             this.with.Location = new System.Drawing.Point(496, 149);
             this.with.Name = "with";
@@ -694,12 +666,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 338);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "sor_app";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.SizeDistPanel.ResumeLayout(false);
             this.SizeDistPanel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -707,7 +675,6 @@
             this.Plot.ResumeLayout(false);
             this.Plot.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -725,9 +692,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.OpenFileDialog openFile;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ListBox loadedFiles;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button makeGraph;
