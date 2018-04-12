@@ -45,7 +45,6 @@
             this.makeGraph = new System.Windows.Forms.Button();
             this.SizeDistPanel = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.MakeData = new System.Windows.Forms.TabPage();
             this.Plot = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
             this.lineType = new System.Windows.Forms.ComboBox();
@@ -86,11 +85,12 @@
             this.title = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.GnuCheckBoxSettings = new System.Windows.Forms.CheckedListBox();
+            this.MakeData = new System.Windows.Forms.TabPage();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.SizeDistPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.MakeData.SuspendLayout();
             this.Plot.SuspendLayout();
+            this.MakeData.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -201,15 +201,15 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(355, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.Size = new System.Drawing.Size(125, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Loaded Files";
+            this.label6.Text = "Individual Graph Settings";
             // 
             // makeGraph
             // 
-            this.makeGraph.Location = new System.Drawing.Point(524, 260);
+            this.makeGraph.Location = new System.Drawing.Point(400, 269);
             this.makeGraph.Name = "makeGraph";
-            this.makeGraph.Size = new System.Drawing.Size(75, 23);
+            this.makeGraph.Size = new System.Drawing.Size(106, 36);
             this.makeGraph.TabIndex = 15;
             this.makeGraph.Text = "MakeGraph";
             this.makeGraph.UseVisualStyleBackColor = true;
@@ -242,17 +242,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(962, 341);
             this.tabControl1.TabIndex = 17;
-            // 
-            // MakeData
-            // 
-            this.MakeData.Controls.Add(this.SizeDistPanel);
-            this.MakeData.Location = new System.Drawing.Point(4, 22);
-            this.MakeData.Name = "MakeData";
-            this.MakeData.Padding = new System.Windows.Forms.Padding(3);
-            this.MakeData.Size = new System.Drawing.Size(954, 315);
-            this.MakeData.TabIndex = 0;
-            this.MakeData.Text = "Make Data";
-            this.MakeData.UseVisualStyleBackColor = true;
             // 
             // Plot
             // 
@@ -522,7 +511,7 @@
             // 
             // removeGraph
             // 
-            this.removeGraph.Location = new System.Drawing.Point(767, 260);
+            this.removeGraph.Location = new System.Drawing.Point(855, 269);
             this.removeGraph.Name = "removeGraph";
             this.removeGraph.Size = new System.Drawing.Size(88, 23);
             this.removeGraph.TabIndex = 38;
@@ -532,7 +521,7 @@
             // 
             // overWrite
             // 
-            this.overWrite.Location = new System.Drawing.Point(686, 260);
+            this.overWrite.Location = new System.Drawing.Point(774, 269);
             this.overWrite.Name = "overWrite";
             this.overWrite.Size = new System.Drawing.Size(75, 23);
             this.overWrite.TabIndex = 37;
@@ -552,7 +541,7 @@
             // 
             // saveGraph
             // 
-            this.saveGraph.Location = new System.Drawing.Point(605, 259);
+            this.saveGraph.Location = new System.Drawing.Point(693, 269);
             this.saveGraph.Name = "saveGraph";
             this.saveGraph.Size = new System.Drawing.Size(75, 23);
             this.saveGraph.TabIndex = 35;
@@ -563,7 +552,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(453, 174);
+            this.label13.Location = new System.Drawing.Point(456, 179);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 13);
             this.label13.TabIndex = 33;
@@ -572,7 +561,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(461, 148);
+            this.label12.Location = new System.Drawing.Point(463, 152);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 32;
@@ -581,25 +570,25 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(472, 125);
+            this.label11.Location = new System.Drawing.Point(480, 125);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.Size = new System.Drawing.Size(32, 13);
             this.label11.TabIndex = 31;
-            this.label11.Text = "Col 2 ";
+            this.label11.Text = "Col Y";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(475, 99);
+            this.label10.Location = new System.Drawing.Point(480, 99);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 30;
-            this.label10.Text = "Col 1";
+            this.label10.Text = "Col X";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(466, 77);
+            this.label8.Location = new System.Drawing.Point(469, 73);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 13);
             this.label8.TabIndex = 29;
@@ -608,11 +597,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(454, 51);
+            this.label7.Location = new System.Drawing.Point(466, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Graph Title";
+            this.label7.Text = "Key Title";
             // 
             // col2
             // 
@@ -647,9 +636,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(8, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Graph Settings";
+            this.label9.Text = "Global Settings";
             // 
             // GnuCheckBoxSettings
             // 
@@ -660,6 +649,17 @@
             this.GnuCheckBoxSettings.Size = new System.Drawing.Size(120, 199);
             this.GnuCheckBoxSettings.TabIndex = 16;
             // 
+            // MakeData
+            // 
+            this.MakeData.Controls.Add(this.SizeDistPanel);
+            this.MakeData.Location = new System.Drawing.Point(4, 22);
+            this.MakeData.Name = "MakeData";
+            this.MakeData.Padding = new System.Windows.Forms.Padding(3);
+            this.MakeData.Size = new System.Drawing.Size(954, 315);
+            this.MakeData.TabIndex = 0;
+            this.MakeData.Text = "Make Data";
+            this.MakeData.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,13 +667,13 @@
             this.ClientSize = new System.Drawing.Size(962, 338);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "sor_app";
+            this.Text = "GUIPlot";
             this.SizeDistPanel.ResumeLayout(false);
             this.SizeDistPanel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.MakeData.ResumeLayout(false);
             this.Plot.ResumeLayout(false);
             this.Plot.PerformLayout();
+            this.MakeData.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
