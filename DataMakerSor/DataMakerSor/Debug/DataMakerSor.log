@@ -1,0 +1,15 @@
+﻿  DataMakerSor.cpp
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(117): warning C4018: '<': signed/unsigned mismatch
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(130): warning C4018: '<': signed/unsigned mismatch
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(145): warning C4018: '<': signed/unsigned mismatch
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(261): warning C4018: '<': signed/unsigned mismatch
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(274): warning C4018: '<': signed/unsigned mismatch
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(289): warning C4018: '<': signed/unsigned mismatch
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(420): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(420): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(422): warning C4244: 'argument': conversion from 'const int' to 'const float', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(422): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(422): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(572): warning C4018: '<': signed/unsigned mismatch
+  DataMakerSor.vcxproj -> C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\Debug\DataMakerSor.exe
+  DataMakerSor.vcxproj -> C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\Debug\DataMakerSor.pdb (Partial PDB)

@@ -50,8 +50,9 @@ namespace sor_app
         }
         private CheckedListBox GnuSettingsInIt()
         {
-            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("logscale", "logscale"));
-            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("key invert", "key invert"));
+            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("logscale X axis", "logscale x"));
+            GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("logscale Y axis", "logscale y"));
+
             GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("parametric", "parametric"));
             GnuSetting.GnuBoolSettingsList.Add(new GnuSetting("polar", "polar"));
 

@@ -1,0 +1,9 @@
+﻿  stdafx.cpp
+  DataMakerSor.cpp
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(392): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(392): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(394): warning C4244: 'argument': conversion from 'const int' to 'const float', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(394): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\colin_000\documents\visual studio 2017\projects\datamakersor\datamakersor\datamakersor.cpp(394): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+  DataMakerSor.vcxproj -> C:\Users\colin_000\Documents\Visual Studio 2017\Projects\DataMakerSor\x64\Debug\DataMakerSor.dll
+  DataMakerSor.vcxproj -> C:\Users\colin_000\Documents\Visual Studio 2017\Projects\DataMakerSor\x64\Debug\DataMakerSor.pdb (Partial PDB)

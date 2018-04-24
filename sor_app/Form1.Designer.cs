@@ -366,6 +366,9 @@
             this.FormatY.FormattingEnabled = true;
             this.FormatY.Items.AddRange(new object[] {
             "%.0f",
+            "%.1f",
+            "%.2f",
+            "%.3f",
             "10^{%L}",
             "%t"});
             this.FormatY.Location = new System.Drawing.Point(196, 164);
@@ -378,6 +381,9 @@
             this.FormatX.FormattingEnabled = true;
             this.FormatX.Items.AddRange(new object[] {
             "%.0f",
+            "%.1f",
+            "%.2f",
+            "%.3f",
             "10^{%L}",
             "%t"});
             this.FormatX.Location = new System.Drawing.Point(196, 133);

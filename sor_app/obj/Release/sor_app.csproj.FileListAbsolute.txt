@@ -1,0 +1,10 @@
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\bin\Release\sor_app.exe.config
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\bin\Release\sor_app.exe
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\bin\Release\sor_app.pdb
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.csprojResolveAssemblyReference.cache
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.Form1.resources
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.Properties.Resources.resources
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.csproj.GenerateResource.Cache
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.csproj.CoreCompileInputs.cache
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.exe
+C:\Users\colin_000\Documents\Visual Studio 2017\Projects\sor_app\sor_app\obj\Release\sor_app.pdb

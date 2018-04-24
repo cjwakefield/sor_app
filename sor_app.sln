@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sor_app", "sor_app\sor_app.csproj", "{CE59D265-085C-4784-8264-D990C6B0C5C2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataMakerSor", "..\DataMakerSor\DataMakerSor\DataMakerSor.vcxproj", "{09DAC9D7-E6AD-4F9A-A0B0-358C6EACAD38}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataMakerSor", "DataMakerSor\DataMakerSor\DataMakerSor.vcxproj", "{09DAC9D7-E6AD-4F9A-A0B0-358C6EACAD38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
